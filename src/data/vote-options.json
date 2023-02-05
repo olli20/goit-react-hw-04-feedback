@@ -1,0 +1,14 @@
+[
+    {
+      "name": "good",
+      "icon": "RiEmotionFill"
+    },
+    {
+      "name": "neutral",
+      "icon": "RiEmotionNormalFill"
+    },
+    {
+      "name": "bad",
+      "icon": "RiEmotionUnhappyFill"
+    }
+]

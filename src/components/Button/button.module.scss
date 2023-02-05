@@ -1,0 +1,56 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    width: 110px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 6px 14px, rgba(0, 0, 0, 0.23) 0px 4px 4px;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover, 
+    &:focus {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(1.05);
+    }
+
+    & > svg {
+        font-size: 20px;
+    }
+}
+
+.good {
+    color: green;
+
+    & > svg {
+        fill: green;
+    }
+}
+
+.neutral {
+    color: rgb(73, 154, 180);
+
+    & > svg {
+        fill: rgb(73, 154, 180);
+    }
+}
+
+.bad {
+    color: tomato;
+
+    & > svg {
+        fill: tomato;
+    }
+}
