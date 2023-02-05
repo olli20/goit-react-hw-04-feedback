@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
-import Notification from './Notification';
-import voteOptions from '../data/vote-options.json';
+import Notification from '../shared/components/Notification';
 
-import initialState from './initialState';
+import voteOptions from '../data/vote-options.json';
+import initialState from '../data/initial-state';
 
 import styles from './app.module.scss';
 
@@ -21,7 +21,7 @@ const App = () => {
   const { good, neutral, bad } = votes;
   const total = good + neutral + bad;
 
-  const countPositiveFeedbackPercentage = () => {
+  const getPositivePercentage = () => {
     if (!total) {
       return 0;
     }
@@ -31,18 +31,8 @@ const App = () => {
   return (
     <div className={styles.app}>
       <FeedbackOptions options={voteOptions} handleVote={handleVote} />
-      
-      {total ?
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={countPositiveFeedbackPercentage()}
-        />
-        :
-        <Notification message="There is no feedback" />
-      }
+      {Boolean(total) && <Statistics {...votes} total={total} positivePercentage={getPositivePercentage()} />}
+      {Boolean(!total) && <Notification message="There is no feedback" />}
     </div>
   );
 }
