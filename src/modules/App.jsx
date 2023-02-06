@@ -1,10 +1,11 @@
 import { useState } from 'react';
+
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import Notification from '../shared/components/Notification';
 
 import voteOptions from '../data/vote-options.json';
-import initialState from '../data/initial-state';
+import initialState from './initialState';
 
 import styles from './app.module.scss';
 
